@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventLdocument.addEventListener("DOMContentLoaded", () => {
     const products = [
         { 
             id: 1, 
@@ -73,3 +73,99 @@ document.addEventListener("DOMContentLoaded", () => {
             sizes: ["M"]  // Ky produkt ka masë
         }
     ];
+    const productList = document.getElementById ("product-list");
+    const categoryFilter = document.getElementById("category-filter");
+    const cartItemsContainer = document.getElementById("cart-items");
+
+    const saveCartItems =(items)=>{
+        localStorage.setItem("cart",JSON.stringify(items));
+    }
+
+    const getCrtItems =()=>{
+        const cart =localStorage.getItem("cart");
+        return cart ? JSON.parse(cart) : [];
+    }
+    const renderProducts = (category = "all") => {
+        productList.innerHTML = ""; // Pastrimi i mëparshëm
+        const filteredProducts = category === "all" 
+            ? products 
+            : products.filter(product => product.category === category);
+
+        filteredProducts.forEach(product => {
+            const div = document.createElement("div");
+            div.className = "product";
+            const sizeOptions = product.sizes.length > 0
+            ? product.sizes.map(size => `<option value="${size}">${size}</option>`).join("")
+            : "<option value=''>No sizes available</option>";
+
+        div.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" class="product-image"> <!-- Foto e produktit -->
+            <h3>${product.name}</h3>
+            <p>Price: $${product.price}</p>
+            <p>Available sizes: 
+                <select class="size-select" data-id="${product.id}">
+                    ${sizeOptions} <!-- Dropdown për masat -->
+                </select>
+            </p>
+            <button data-id="${product.id}">Add to Cart</button>
+        `;
+        productList.appendChild(div);
+    });
+};  
+
+renderProducts();
+
+categoryFilter.addEventListener("chage",(e)=>{
+    renderProducts(e.target.value);
+});
+
+productList.addEventListener("click", (e) => {
+    if (e.target.tagName === "BUTTON") {
+        const productId = parseInt(e.target.dataset.id);
+        const sizeSelect = e.target.previousElementSibling.querySelector('.size-select');
+        const selectedSize = sizeSelect ? sizeSelect.value : null;
+
+        if (!selectedSize) {
+            alert("Please select a size before adding to cart.");
+            return;
+        }
+
+        const product = products.find(p => p.id === productId);
+        const cart = getCartItems();
+        cart.push({ ...product, selectedSize }); // Ruajmë masën e zgjedhur bashkë me produktin
+        saveCartItems(cart);
+        alert(`${product.name} of size ${selectedSize} added to cart!`);
+    }
+});
+
+const renderCart = () => {
+    const cart = getCartItems();
+    if (cartItemsContainer) {
+        if (cart.length > 0) {
+            cartItemsContainer.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <p>${item.name} - $${item.price} - Size: ${item.selectedSize}</p>
+                    <button class="remove-btn" data-id="${item.id}">Remove</button>
+                </div>
+            `).join("");
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            cartItemsContainer.innerHTML += `<p><strong>Total: $${total}</strong></p>`;
+        } else {
+            cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+        }
+    }
+};
+
+if(cartItemsContainer){
+    cartItemsContainer.addEventListener("click",(e)=>{
+        if(e.target.classList.contains("remove-btn")){
+            const productId =parseInt(e.target.dataset.id);
+            const cart = getCartItems();
+            const newCart =cart.filter(iteam => item.id !==productId);
+            saveCartItems(newCart);
+            renderCart();
+        }
+    })
+}
+ renderCart();
+});
