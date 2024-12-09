@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", () => {
     // Kontrollo nëse jemi në products.html
     if (window.location.pathname.includes("products.html")) {
@@ -7,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Elegant Evening Dress", 
                 price: 120, 
                 category: "evening", 
-                image: "111.jpeg", 
+                image: "images/111.jpeg", 
                 sizes: ["S", "M", "L", "XL"]
             },
             { 
@@ -15,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Casual Denim Dress", 
                 price: 80, 
                 category: "casual", 
-                image: "123.jpg",
+                image: "images/123.jpg",
                 sizes: ["M", "L", "XL"]
             },
             { 
@@ -23,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Floral Summer Dress", 
                 price: 100, 
                 category: "summer", 
-                image: "222.jpeg", 
+                image: "images/222.jpeg", 
                 sizes: ["S", "M", "L"]
             },
             { 
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Classic Evening Dress", 
                 price: 150, 
                 category: "evening", 
-                image: "333.jpeg",
+                image: "images/333.jpeg",
                 sizes: []
             },
             { 
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Relaxed Casual Dress", 
                 price: 70, 
                 category: "summer", 
-                image: "444.webp", 
+                image: "images/444.webp", 
                 sizes: ["S", "M", "L", "XL"]
             },
             {
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Ruffle Printed Mesh Wrap Maxi Dress", 
                 price: 30, 
                 category: "evening", 
-                image: "555.webp", 
+                image: "images/555.webp", 
                 sizes: ["XS", "S", "L"]
             },
             { 
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Plus Denim Zip Up Shift Dress", 
                 price: 20, 
                 category: "casual", 
-                image: "666.webp", 
+                image: "images/666.webp", 
                 sizes: ["S", "M"]
             },
             {
@@ -63,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "The Midaxi Shirt Dress", 
                 price: 25, 
                 category: "casual", 
-                image: "777.webp", 
+                image: "images/777.webp", 
                 sizes: ["S"]
             },
             {
@@ -71,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Rose Print Satin Slip Mini Dress", 
                 price: 15, 
                 category: "summer", 
-                image: "888.webp", 
+                image: "images/888.webp", 
                 sizes: ["M"]
             },
             {
@@ -79,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Rose Print Satin Slip Mini Dress", 
                 price: 15, 
                 category: "summer", 
-                image: "10.webp", 
+                image: "images/10.webp", 
                 sizes: ["M"]
             },
             {
@@ -87,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Rose Print Satin Slip Mini Dress", 
                 price: 15, 
                 category: "summer", 
-                image: "11.webp", 
+                image: "images/11.webp", 
                 sizes: ["M"]
             },
             {
@@ -95,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Rose Print Satin Slip Mini Dress", 
                 price: 15, 
                 category: "summer", 
-                image: "12.webp", 
+                image: "images/12.webp", 
                 sizes: ["M"]
             },
             {
@@ -103,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Rose Print Satin Slip Mini Dress", 
                 price: 15, 
                 category: "summer", 
-                image: "13.webp", 
+                image: "images/13.webp", 
                 sizes: ["M"]
             },
             {
@@ -111,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Rose Print Satin Slip Mini Dress", 
                 price: 15, 
                 category: "summer", 
-                image: "14.webp", 
+                image: "images/14.webp", 
                 sizes: ["M"]
             },
             {
@@ -119,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 name: "Rose Print Satin Slip Mini Dress", 
                 price: 15, 
                 category: "summer", 
-                image: "15.webp", 
+                image: "images/15.webp", 
                 sizes: ["M"]
             }
         ];
@@ -194,3 +195,4 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(autoSlide, 3000);  // Slider automatik çdo 3 sekonda
 });
 
+=======
