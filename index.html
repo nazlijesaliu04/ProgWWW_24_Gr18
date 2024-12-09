@@ -1,34 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dress Shop - Home</title>
-    
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>NilaNaz Dresses</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Dress Shop</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact</a>
-            <a href="shopping-cart.html">Cart</a>
-        </nav>
-    
-    </header>
-    <main>
-        <section class="slider">
-            <p>Check out our latest collections!</p>
-        </section>
-        <section class="promotions">
-            <h2>Special Offers</h2>
-            <p>Up to 50% off on evening dresses!</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Dress Shop. All rights reserved.</p>
-    </footer>
+<header>
+  <div class="logo">
+    <span>NilaNaz Dresses</span> <!-- Emri i dyqanit -->
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="shopping-cart.html">Cart</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="content">
+      <h1>Welcome to <span>NilaNaz Dresses</span></h1> <!-- Teksti i mirëseardhjes -->
+      <p>Discover elegance and comfort with our exclusive dress collection.</p>
+      <a href="products.html" class="btn">Shop Now</a> <!-- Lidhur me Products -->
+    </div>
+    <div class="slider">
+      <div class="slides">
+        <div class="slide">
+          <img src="10.webp" alt="Clothing 1">
+        </div>
+        <div class="slide">
+          <img src="12.webp" alt="Clothing 2">
+        </div>
+        <div class="slide">
+          <img src="12.webp" alt="Clothing 3">
+        </div>
+      </div>
+      <div class="dots">
+        <span class="dot" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-products">
+      <h2>Our Featured Products</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="222.jpeg" alt="Product 1">
+          <h3>Summer Dress</h3>
+          <p>$49.99</p>
+          <a href="products.html" class="btn">Shop Now</a>
+        </div>
+        <div class="product-card">
+          <img src="888.webp" alt="Product 2">
+          <h3>Evening Gown</h3>
+          <p>$89.99</p>
+          <a href="products.html" class="btn">Shop Now</a>
+        </div>
+        <div class="product-card">
+          <img src="555.webp" alt="Product 3">
+          <h3>Casual Jacket</h3>
+          <p>$69.99</p>
+          <a href="products.html" class="btn">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+        <h2>Why Shop With Us?</h2>
+        <div class="service-grid">
+          <div class="service-card">
+            <i class="fas fa-shipping-fast"></i>
+            <h3>Fast Shipping</h3>
+            <p>Receive your orders quickly with our reliable delivery service.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-exchange-alt"></i>
+            <h3>Easy Returns</h3>
+            <p>Hassle-free returns within 30 days of purchase.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-user-cog"></i>
+            <h3>Custom Orders</h3>
+            <p>Get dresses tailored to your preferences with our customization options.</p>
+          </div>
+        </div>
+      </section>
+
+    <section class="review">
+      <h2>What Our Customers Say</h2>
+      <div class="review-grid">
+        <div class="review-card">
+          <p>"I absolutely love the quality of the dresses! Highly recommended."</p>
+          <h4>- Sarah J.</h4>
+        </div>
+        <div class="review-card">
+          <p>"The service was fantastic and the delivery was super fast."</p>
+          <h4>- Emma W.</h4>
+        </div>
+        <div class="review-card">
+          <p>"Beautiful collection, perfect for any occasion. I'll shop again."</p>
+          <h4>- Olivia T.</h4>
+        </div>
+      </div>
+    </section> 
+  </main>
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>&copy; 2024 NilaNaz Dresses. All rights reserved.</p> <!-- Teksti i footerit -->
+  </footer>
+  <script src="main.js"></script>
+
 </body>
 </html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dress Shop - Products</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
+    <script src="main.js" defer></script> <!-- Këtu e thërrasim main.js që të funksionojë për këtë faqe -->
 </head>
 <body>
     <header>
@@ -15,8 +15,9 @@
             <a href="contact.html">Contact</a>
             <a href="shopping-cart.html">Cart</a>
         </nav>
-        <main>
-          <section>
+    </header>
+    <main>
+        <section>
             <label for="category-filter">Choose a category:</label>
             <select id="category-filter">
                 <option value="all">All Dresses</option>
@@ -24,12 +25,11 @@
                 <option value="casual">Casual Dresses</option>
                 <option value="summer">Summer Dresses</option>
             </select>
-          </section>
-             <div id="product-list"></div>
-        </main>
-        <footer>
-            <p>&copy; 2024 Dress Shop. All rights reserved.</p>
-        </footer>
-    </header>
+        </section>
+        <div id="product-list"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Dress Shop. All rights reserved.</p>
+    </footer>
 </body>
 </html>

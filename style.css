@@ -1,10 +1,10 @@
-body,h1,h2,h3,p,nav,ul,li,a,button,input,textarea,select{
+/*body,h1,h2,h3,p,nav,ul,li,a,button,input,textarea,select{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 /*trupi i faqes*/
-body{
+/*body{
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f9f9f9;
@@ -12,7 +12,7 @@ body{
     margin: 0;
 }
 /*header*/
-header {
+/*header {
     background: #333;
     color: #fff;
     padding: 1rem 2rem;
@@ -44,11 +44,11 @@ nav a:hover {
 }
 
 /* Main Content */
-main {
+/*main {
     padding: 2rem;
     text-align: center;
 }
-
+*/
 /* Dropdown menu */
 #category-filter {
     margin: 1rem 0;
@@ -57,7 +57,7 @@ main {
     border: 1px solid #ddd;
     border-radius: 5px;
     width: 50%;
-}
+} 
 
 /* Product List */
 #product-list {
@@ -187,7 +187,7 @@ footer {
 }
 
 /* Slider Section */
-.slider {
+/*.slider {
     background: #ffdede;
     padding: 2rem;
     margin-bottom: 2rem;
@@ -201,9 +201,312 @@ footer {
 }
 
 /* Promotions Section */
-.promotions h2 {
+/*.promotions h2 {
     color: #c70039;
 }
+    /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    background-color: #f7f7f7;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color:#F7F2ED;
+  }
+  
+  .logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  nav ul li a {
+    color: #555;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+  }
+  
+  nav ul li a.active, nav ul li a:hover {
+    background-color: #b5a89b;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  /* Hero Section */
+  .hero {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 2rem;
+    margin-top: 20px;
+  }
+  
+  .content {
+    max-width: 50%;
+    margin-right: 20px;
+  }
+  
+  .content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .content h1 span {
+    color: #b5a89b;
+  }
+  
+  .content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .btn {
+    padding: 0.7rem 1.5rem;
+    background-color: #b5a89b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Slider Styles */
+  .slider {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    min-width: 100%;
+  }
+  
+  .slide img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+  }
+  
+  .dots {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background-color: #b5a89b;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #b5a89b;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .social-icons {
+    margin-bottom: 1rem;
+  }
+  
+  .social-icons a {
+    margin: 0 0.5rem;
+  }
+  
+  .social-icons img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Featured Products Section */
+  .featured-products {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: #fff;
+  }
+  
+  .featured-products h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .product-card {
+    background: #f7f7f7;
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .product-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .product-card p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 1rem;
+  }
+  
+  .product-card .btn {
+    background-color: #b5a89b;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  
+  /* Services Section */
+  /* Section: Services Styles */
+  .services {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: #fff;
+  }
+  
+  .services h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .service-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .service-card {
+    background: #f7f7f7;
+    border-radius: 50%;
+    padding: 1.5rem;
+    max-width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-card i {
+    font-size: 2rem;
+    color: #b5a89b;
+    margin-bottom: 1rem;
+  }
+  
+  .service-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+  }
+  
+  .service-card p {
+    font-size: 0.95rem;
+    color: #666;
+  }
+  
+  /* Review Section */
+  /* Section: Review Section Styles */
+  .review {
+    background: #f7f7f7;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  
+  .review h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .review-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .review-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .review-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .review-card h4 {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: bold;
+    text-align: right;
+  }
 
 /* Responsive Design */
 @media (max-width: 768px) {
