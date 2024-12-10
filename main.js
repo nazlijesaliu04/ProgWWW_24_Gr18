@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 document.addEventListener("DOMContentLoaded", () => {
     // Kontrollo nëse jemi në products.html
     if (window.location.pathname.includes("products.html")) {
@@ -194,5 +194,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setInterval(autoSlide, 3000);  // Slider automatik çdo 3 sekonda
 });
-
-=======
