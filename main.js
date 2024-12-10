@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 price: 120, 
                 category: "evening", 
                 image: "images/111.jpeg", 
-                sizes: ["S", "M", "L", "XL"]
+                sizes: ["XS","S", "M", "L", "XL"]
             },
             { 
                 id: 2, 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 price: 80, 
                 category: "casual", 
                 image: "images/123.jpg",
-                sizes: ["M", "L", "XL"]
+                sizes: ["XS","S", "M", "L", "XL"]
             },
             { 
                 id: 3, 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 price: 100, 
                 category: "summer", 
                 image: "images/222.jpeg", 
-                sizes: ["S", "M", "L"]
+                sizes: ["XS","S", "M", "L", "XL"]
             },
             { 
                 id: 4, 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 price: 150, 
                 category: "evening", 
                 image: "images/333.jpeg",
-                sizes: []
+                sizes: ["XS","S", "M", "L", "XL"]
             },
             { 
                 id: 5, 
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 price: 70, 
                 category: "summer", 
                 image: "images/444.webp", 
-                sizes: ["S", "M", "L", "XL"]
+                sizes: ["XS","S", "M", "L", "XL"]
             },
             {
                 id: 6, 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 price: 30, 
                 category: "evening", 
                 image: "images/555.webp", 
-                sizes: ["XS", "S", "L"]
+                sizes: ["XS","S", "M", "L", "XL"]
             },
             { 
                 id: 7, 
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 price: 20, 
                 category: "casual", 
                 image: "images/666.webp", 
-                sizes: ["S", "M"]
+                sizes: ["XS","S", "M", "L", "XL"]
             },
             {
                 id: 8, 
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 price: 25, 
                 category: "casual", 
                 image: "images/777.webp", 
-                sizes: ["S"]
+                sizes: ["XS","S", "M", "L", "XL"]
             },
             {
                 id: 9, 
@@ -73,80 +73,114 @@ document.addEventListener("DOMContentLoaded", () => {
                 price: 15, 
                 category: "summer", 
                 image: "images/888.webp", 
-                sizes: ["M"]
+                sizes: ["XS","S", "M", "L", "XL"]
             },
             {
                 id: 10, 
-                name: "Rose Print Satin Slip Mini Dress", 
+                name: "Black Dress", 
                 price: 15, 
-                category: "summer", 
+                category: "evening", 
                 image: "images/10.webp", 
-                sizes: ["M"]
+                sizes: ["XS","S", "M", "L", "XL"]
             },
             {
                 id: 11, 
-                name: "Rose Print Satin Slip Mini Dress", 
+                name: "Winter Dress", 
                 price: 15, 
-                category: "summer", 
-                image: "images/11.webp", 
-                sizes: ["M"]
+                category: "casual", 
+                image: "images/15.webp", 
+                sizes: ["XS","S", "M", "L", "XL"]
             },
             {
                 id: 12, 
-                name: "Rose Print Satin Slip Mini Dress", 
+                name: " Elegance", 
                 price: 15, 
-                category: "summer", 
+                category: "evening", 
                 image: "images/12.webp", 
-                sizes: ["M"]
+                sizes: ["XS","S", "M", "L", "XL"]
             },
             {
                 id: 13, 
-                name: "Rose Print Satin Slip Mini Dress", 
+                name: "Blue Dress", 
                 price: 15, 
                 category: "summer", 
                 image: "images/13.webp", 
-                sizes: ["M"]
+                sizes: ["XS","S", "M", "L", "XL"]
             },
             {
                 id: 14, 
-                name: "Rose Print Satin Slip Mini Dress", 
+                name: "Brown Mini Dress", 
                 price: 15, 
-                category: "summer", 
+                category: "casual", 
                 image: "images/14.webp", 
-                sizes: ["M"]
+                sizes: ["XS","S", "M", "L", "XL"]
             },
             {
                 id: 15, 
-                name: "Rose Print Satin Slip Mini Dress", 
+                name: "Green summer Dress", 
                 price: 15, 
                 category: "summer", 
-                image: "images/15.webp", 
-                sizes: ["M"]
+                image: "images/19.webp", 
+                sizes: ["XS","S", "M", "L", "XL"]
             }
         ];
 
-        // Funksioni për të shfaqur produktet në faqen web
+    
+    
+
         const productContainer = document.getElementById("product-list");
+
+        const addToCart = (product, selectedSize) => {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push({ ...product, selectedSize }); // Shto produktin me masën e zgjedhur
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${product.name} of size ${selectedSize} added to cart!`);
+        };
 
         products.forEach(product => {
             const productElement = document.createElement("div");
             productElement.classList.add("product");
 
+            // Krijimi i dropdown për masat
+            const sizeOptions = product.sizes.length > 0
+                ? product.sizes.map(size => `<option value="${size}">${size}</option>`).join("")
+                : "<option value=''>No sizes available</option>";
+
             productElement.innerHTML = `
                 <h2>${product.name}</h2>
                 <img src="${product.image}" alt="${product.name}" style="width: 200px; height: auto;">
                 <p>Price: $${product.price}</p>
-                <p>Sizes: ${product.sizes.length > 0 ? product.sizes.join(", ") : "No sizes available"}</p>
+                <p>
+                    <label for="size-select-${product.id}">Select Size:</label>
+                    <select id="size-select-${product.id}" class="size-select">
+                        ${sizeOptions}
+                    </select>
+                </p>
+                <button data-id="${product.id}">Add to Cart</button>
             `;
 
             productContainer.appendChild(productElement);
+
+            // Event për shtimin në shportë
+            const addToCartButton = productElement.querySelector("button");
+            addToCartButton.addEventListener("click", () => {
+                const sizeSelect = productElement.querySelector(".size-select");
+                const selectedSize = sizeSelect.value;
+
+                if (!selectedSize) {
+                    alert("Please select a size before adding to cart.");
+                    return;
+                }
+
+                addToCart(product, selectedSize);
+            });
         });
 
         // Filterimi i produkteve sipas kategorisë
         const categoryFilter = document.getElementById("category-filter");
         categoryFilter.addEventListener("change", (event) => {
             const selectedCategory = event.target.value;
-            productContainer.innerHTML = ""; // Fshijmë produktet ekzistuese
+            productContainer.innerHTML = "";
 
             const filteredProducts = selectedCategory === "all" 
                 ? products 
@@ -156,41 +190,105 @@ document.addEventListener("DOMContentLoaded", () => {
                 const productElement = document.createElement("div");
                 productElement.classList.add("product");
 
+                const sizeOptions = product.sizes.length > 0
+                    ? product.sizes.map(size => `<option value="${size}">${size}</option>`).join("")
+                    : "<option value=''>No sizes available</option>";
+
                 productElement.innerHTML = `
                     <h2>${product.name}</h2>
                     <img src="${product.image}" alt="${product.name}" style="width: 200px; height: auto;">
                     <p>Price: $${product.price}</p>
-                    <p>Sizes: ${product.sizes.length > 0 ? product.sizes.join(", ") : "No sizes available"}</p>
+                    <p>
+                        <label for="size-select-${product.id}">Select Size:</label>
+                        <select id="size-select-${product.id}" class="size-select">
+                            ${sizeOptions}
+                        </select>
+                    </p>
+                    <button data-id="${product.id}">Add to Cart</button>
                 `;
 
                 productContainer.appendChild(productElement);
+
+                const addToCartButton = productElement.querySelector("button");
+                addToCartButton.addEventListener("click", () => {
+                    const sizeSelect = productElement.querySelector(".size-select");
+                    const selectedSize = sizeSelect.value;
+
+                    if (!selectedSize) {
+                        alert("Please select a size before adding to cart.");
+                        return;
+                    }
+
+                    addToCart(product, selectedSize);
+                });
             });
         });
     }
 
-    // Slider për imazhet
-    const slides = document.querySelector('.slides');
-    const dots = document.querySelectorAll('.dot');
-    let currentIndex = 0;
+    // Kontrollo nëse jemi në shopping-cart.html
+    if (window.location.pathname.includes("shopping-cart.html")) {
+        const cartItemsContainer = document.getElementById("cart-items");
 
-    function updateSlider() {
-        slides.style.transform = `translateX(-${currentIndex * 100}%)`;  // Përdorimi i saktë i translateX
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
-        });
+        const renderCart = () => {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+                return;
+            }
+
+            cartItemsContainer.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <h3>${item.name}</h3>
+                    <img src="${item.image}" alt="${item.name}" style="width: 100px; height: auto;">
+                    <p>Price: $${item.price}</p>
+                    <p>Size: ${item.selectedSize || "No size selected"}</p>
+                    <button data-id="${item.id}" class="remove-btn">Remove</button>
+                </div>
+            `).join("");
+
+            document.querySelectorAll(".remove-btn").forEach(button => {
+                button.addEventListener("click", (e) => {
+                    const productId = parseInt(e.target.dataset.id);
+                    removeFromCart(productId);
+                });
+            });
+        };
+
+        const removeFromCart = (productId) => {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const updatedCart = cart.filter(item => item.id !== productId);
+            localStorage.setItem("cart", JSON.stringify(updatedCart));
+            renderCart();
+        };
+
+        renderCart();
     }
-
-    function autoSlide() {
-        currentIndex = (currentIndex + 1) % dots.length;
-        updateSlider();
-    }
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentIndex = index;
-            updateSlider();
-        });
-    });
-
-    setInterval(autoSlide, 3000);  // Slider automatik çdo 3 sekonda
+     // Slider për imazhet
+     const slides = document.querySelector('.slides');
+     const dots = document.querySelectorAll('.dot');
+     let currentIndex = 0;
+ 
+     function updateSlider() {
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        // Përdorimi i saktë i translateX
+         dots.forEach((dot, index) => {
+             dot.classList.toggle('active', index === currentIndex);
+         });
+     }
+ 
+     function autoSlide() {
+         currentIndex = (currentIndex + 1) % dots.length;
+         updateSlider();
+     }
+ 
+     dots.forEach((dot, index) => {
+         dot.addEventListener('click', () => {
+             currentIndex = index;
+             updateSlider();
+         });
+     });
+ 
+     setInterval(autoSlide, 2000);  // Slider automatik çdo 3 sekonda
+ 
 });
