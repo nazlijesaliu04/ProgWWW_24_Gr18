@@ -1,138 +1,134 @@
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Kontrollo nëse jemi në products.html
+document.addEventListener("DOMContentLoaded", () => { 
     if (window.location.pathname.includes("products.html")) {
-        const products = [
-            { 
-                id: 1, 
-                name: "Elegant Evening Dress", 
-                price: 120, 
-                category: "evening", 
-                image: "images/111.jpeg", 
-                sizes: ["XS","S", "M", "L", "XL"]
+        const products = [ 
+            {
+                id: 1,
+                name: "Elegant Evening Dress",
+                price: 120,
+                category: "evening",
+                image: "images/111.jpeg",
+                sizes: ["XS", "S", "M", "L", "XL"]
             },
-            { 
-                id: 2, 
-                name: "Casual Denim Dress", 
-                price: 80, 
-                category: "casual", 
+            {
+                id: 2,
+                name: "Casual Denim Dress",
+                price: 80,
+                category: "casual",
                 image: "images/123.jpg",
-                sizes: ["XS","S", "M", "L", "XL"]
+                sizes: ["XS", "S", "M", "L", "XL"]
             },
-            { 
-                id: 3, 
-                name: "Floral Summer Dress", 
-                price: 100, 
-                category: "summer", 
-                image: "images/222.jpeg", 
-                sizes: ["XS","S", "M", "L", "XL"]
+            {
+                id: 3,
+                name: "Floral Summer Dress",
+                price: 100,
+                category: "summer",
+                image: "images/222.jpeg",
+                sizes: ["XS", "S", "M", "L", "XL"]
             },
-            { 
-                id: 4, 
-                name: "Classic Evening Dress", 
-                price: 150, 
-                category: "evening", 
+            {
+                id: 4,
+                name: "Classic Evening Dress",
+                price: 150,
+                category: "evening",
                 image: "images/333.jpeg",
-                sizes: ["XS","S", "M", "L", "XL"]
-            },
-            { 
-                id: 5, 
-                name: "Relaxed Casual Dress", 
-                price: 70, 
-                category: "summer", 
-                image: "images/444.webp", 
-                sizes: ["XS","S", "M", "L", "XL"]
+                sizes: ["XS", "S", "M", "L", "XL"]
             },
             {
-                id: 6, 
-                name: "Ruffle Printed Mesh Wrap Maxi Dress", 
-                price: 30, 
-                category: "evening", 
-                image: "images/555.webp", 
-                sizes: ["XS","S", "M", "L", "XL"]
-            },
-            { 
-                id: 7, 
-                name: "Plus Denim Zip Up Shift Dress", 
-                price: 20, 
-                category: "casual", 
-                image: "images/666.webp", 
-                sizes: ["XS","S", "M", "L", "XL"]
+                id: 5,
+                name: "Relaxed Casual Dress",
+                price: 70,
+                category: "summer",
+                image: "images/444.webp",
+                sizes: ["XS", "S", "M", "L", "XL"]
             },
             {
-                id: 8, 
-                name: "The Midaxi Shirt Dress", 
-                price: 25, 
-                category: "casual", 
-                image: "images/777.webp", 
-                sizes: ["XS","S", "M", "L", "XL"]
+                id: 6,
+                name: "Ruffle Printed Mesh Wrap Maxi Dress",
+                price: 30,
+                category: "evening",
+                image: "images/555.webp",
+                sizes: ["XS", "S", "M", "L", "XL"]
             },
             {
-                id: 9, 
-                name: "Rose Print Satin Slip Mini Dress", 
-                price: 15, 
-                category: "summer", 
-                image: "images/888.webp", 
-                sizes: ["XS","S", "M", "L", "XL"]
+                id: 7,
+                name: "Plus Denim Zip Up Shift Dress",
+                price: 20,
+                category: "casual",
+                image: "images/666.webp",
+                sizes: ["XS", "S", "M", "L", "XL"]
             },
             {
-                id: 10, 
-                name: "Black Dress", 
-                price: 15, 
-                category: "evening", 
-                image: "images/10.webp", 
-                sizes: ["XS","S", "M", "L", "XL"]
+                id: 8,
+                name: "The Midaxi Shirt Dress",
+                price: 25,
+                category: "casual",
+                image: "images/777.webp",
+                sizes: ["XS", "S", "M", "L", "XL"]
             },
             {
-                id: 11, 
-                name: "Winter Dress", 
-                price: 15, 
-                category: "casual", 
-                image: "images/15.webp", 
-                sizes: ["XS","S", "M", "L", "XL"]
+                id: 9,
+                name: "Rose Print Satin Slip Mini Dress",
+                price: 15,
+                category: "summer",
+                image: "images/888.webp",
+                sizes: ["XS", "S", "M", "L", "XL"]
             },
             {
-                id: 12, 
-                name: " Elegance", 
-                price: 15, 
-                category: "evening", 
-                image: "images/12.webp", 
-                sizes: ["XS","S", "M", "L", "XL"]
+                id: 10,
+                name: "Black Dress",
+                price: 15,
+                category: "evening",
+                image: "images/10.webp",
+                sizes: ["XS", "S", "M", "L", "XL"]
             },
             {
-                id: 13, 
-                name: "Blue Dress", 
-                price: 15, 
-                category: "summer", 
-                image: "images/13.webp", 
-                sizes: ["XS","S", "M", "L", "XL"]
+                id: 11,
+                name: "Winter Dress",
+                price: 15,
+                category: "casual",
+                image: "images/15.webp",
+                sizes: ["XS", "S", "M", "L", "XL"]
             },
             {
-                id: 14, 
-                name: "Brown Mini Dress", 
-                price: 15, 
-                category: "casual", 
-                image: "images/14.webp", 
-                sizes: ["XS","S", "M", "L", "XL"]
+                id: 12,
+                name: " Elegance",
+                price: 15,
+                category: "evening",
+                image: "images/12.webp",
+                sizes: ["XS", "S", "M", "L", "XL"]
             },
             {
-                id: 15, 
-                name: "Green summer Dress", 
-                price: 15, 
-                category: "summer", 
-                image: "images/19.webp", 
-                sizes: ["XS","S", "M", "L", "XL"]
+                id: 13,
+                name: "Blue Dress",
+                price: 15,
+                category: "summer",
+                image: "images/13.webp",
+                sizes: ["XS", "S", "M", "L", "XL"]
+            },
+            {
+                id: 14,
+                name: "Brown Mini Dress",
+                price: 15,
+                category: "casual",
+                image: "images/14.webp",
+                sizes: ["XS", "S", "M", "L", "XL"]
+            },
+            {
+                id: 15,
+                name: "Green summer Dress",
+                price: 15,
+                category: "summer",
+                image: "images/19.webp",
+                sizes: ["XS", "S", "M", "L", "XL"]
             }
         ];
-
-    
-    
 
         const productContainer = document.getElementById("product-list");
 
         const addToCart = (product, selectedSize) => {
             const cart = JSON.parse(localStorage.getItem("cart")) || [];
-            cart.push({ ...product, selectedSize }); // Shto produktin me masën e zgjedhur
+            cart.push({ ...product, selectedSize });
             localStorage.setItem("cart", JSON.stringify(cart));
             alert(`${product.name} of size ${selectedSize} added to cart!`);
         };
@@ -176,14 +172,14 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Filterimi i produkteve sipas kategorisë
+        /* Filterimi i produkteve sipas kategorisë */
         const categoryFilter = document.getElementById("category-filter");
         categoryFilter.addEventListener("change", (event) => {
             const selectedCategory = event.target.value;
             productContainer.innerHTML = "";
 
-            const filteredProducts = selectedCategory === "all" 
-                ? products 
+            const filteredProducts = selectedCategory === "all"
+                ? products
                 : products.filter(product => product.category === selectedCategory);
 
             filteredProducts.forEach(product => {
@@ -225,7 +221,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Kontrollo nëse jemi në shopping-cart.html
     if (window.location.pathname.includes("shopping-cart.html")) {
         const cartItemsContainer = document.getElementById("cart-items");
 
@@ -264,31 +259,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         renderCart();
     }
-     // Slider për imazhet
-     const slides = document.querySelector('.slides');
-     const dots = document.querySelectorAll('.dot');
-     let currentIndex = 0;
- 
-     function updateSlider() {
+    /* Slider për imazhet */
+    const slides = document.querySelector('.slides');
+    const dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+
+    function updateSlider() {
         slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-        // Përdorimi i saktë i translateX
-         dots.forEach((dot, index) => {
-             dot.classList.toggle('active', index === currentIndex);
-         });
-     }
- 
-     function autoSlide() {
-         currentIndex = (currentIndex + 1) % dots.length;
-         updateSlider();
-     }
- 
-     dots.forEach((dot, index) => {
-         dot.addEventListener('click', () => {
-             currentIndex = index;
-             updateSlider();
-         });
-     });
- 
-     setInterval(autoSlide, 2000);  // Slider automatik çdo 3 sekonda
- 
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function autoSlide() {
+        currentIndex = (currentIndex + 1) % dots.length;
+        updateSlider();
+    }
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateSlider();
+        });
+    });
+
+    setInterval(autoSlide, 2000);
+
 });

@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dress Shop - Products</title>
+    <title>Checkout - NilaNaz Dresses</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <header>
-      <h1>Our product</h1>
+      <h1>Checkout</h1>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -19,18 +20,32 @@
         </ul>
       </nav>
     </header>
+
     <main>
-      <section>
-        <label for="category-filter">Choose a category:</label>
-        <select id="category-filter">
-          <option value="all">All Dresses</option>
-          <option value="evening">Evening Dresses</option>
-          <option value="casual">Casual Dresses</option>
-          <option value="summer">Summer Dresses</option>
-        </select>
+      <section id="checkout-form">
+        <h2>Review Your Order</h2>
+
+        <div class="product-details">
+          <p><strong>Product Name:</strong> Summer Dress</p>
+          <p><strong>Price:</strong> $50.00</p>
+        </div>
+
+        <form action="submit-order.html" method="POST">
+          <h3>User Information</h3>
+          <label for="name">First Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="surname">Last Name:</label>
+          <input type="text" id="surname" name="surname" required />
+
+          <label for="address">Address:</label>
+          <textarea id="address" name="address" required></textarea>
+
+          <button type="submit" class="submit-button">Submit Order</button>
+        </form>
       </section>
-      <div id="product-list"></div>
     </main>
+
     <footer>
       <div class="social-icons">
         <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
@@ -41,5 +56,4 @@
       <p>&copy; 2024 NilaNaz Dresses. All rights reserved.</p>
     </footer>
   </body>
-  <script src="main.js"></script>
 </html>
