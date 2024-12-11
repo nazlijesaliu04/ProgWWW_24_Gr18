@@ -6,7 +6,25 @@ body {
   box-sizing: border-box;
   color: #333;
   background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+footer {
+  background-color: #b5a89b;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+  width: 100%;
+  margin: 0; 
+}
+
 #category-filter {
   margin: 1rem 0;
   padding: 0.5rem;
@@ -16,12 +34,12 @@ body {
   width: 50%;
 } 
 
-/* Product List */
 #product-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
+  margin-bottom: 50px;
 }
 
 .product {
@@ -57,7 +75,6 @@ body {
   background: #e63946;
 }
 
-/* Cart Items */
 .cart-item {
   margin: 1rem 0;
   padding: 1rem;
@@ -92,7 +109,7 @@ body {
 .remove-btn:hover {
   background: #c70039;
 }
-/* Checkout Button */
+
 .checkout-btn {
   text-align: center;
   margin-top: 2rem;
@@ -113,7 +130,6 @@ body {
   background: #4caf50;
 }
 
-/* Checkout Form */
 #checkout-form {
   max-width: 600px;
   margin: 40px auto;
@@ -156,7 +172,7 @@ body {
   font-size: 1.2rem;
   transition: background 0.3s;
 }
-/* Formularët */
+
 form {
   max-width: 400px;
   margin: 0 auto;
@@ -313,15 +329,6 @@ nav ul li a.active, nav ul li a:hover {
 
 .dot.active {
   background-color: #b5a89b;
-}
-
-footer {
-  background-color: #b5a89b;
-  color: #fff;
-  text-align: center;
-  padding: 1.5rem;
-  margin-bottom: 0;
-  margin-top: 73px;
 }
 
 .social-icons {
@@ -527,3 +534,19 @@ font-size: 1rem;
 line-height: 1.6;
 margin-bottom: 1.2rem;
 }
+#thank-you-message {
+  background-color: #f0f8ff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#thank-you-message h2 {
+  color: #28a745;
+}
+
+#thank-you-message p {
+  color: #333;
+}
+

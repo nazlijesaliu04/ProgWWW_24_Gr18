@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const productElement = document.createElement("div");
             productElement.classList.add("product");
 
-            // Krijimi i dropdown për masat
+            // Krijimi i dropdown per masat
             const sizeOptions = product.sizes.length > 0
                 ? product.sizes.map(size => `<option value="${size}">${size}</option>`).join("")
                 : "<option value=''>No sizes available</option>";
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             productContainer.appendChild(productElement);
 
-            // Event për shtimin në shportë
+            // Event per shtimin ne shporte
             const addToCartButton = productElement.querySelector("button");
             addToCartButton.addEventListener("click", () => {
                 const sizeSelect = productElement.querySelector(".size-select");
@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        /* Filterimi i produkteve sipas kategorisë */
+        /* Filterimi i produkteve sipas kategorise */
         const categoryFilter = document.getElementById("category-filter");
         categoryFilter.addEventListener("change", (event) => {
             const selectedCategory = event.target.value;
@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         renderCart();
     }
-    /* Slider për imazhet */
+    /* Slider per imazhet */
     const slides = document.querySelector('.slides');
     const dots = document.querySelectorAll('.dot');
     let currentIndex = 0;
@@ -286,3 +286,5 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(autoSlide, 2000);
 
 });
+
+

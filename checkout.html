@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout - NilaNaz Dresses</title>
     <link rel="stylesheet" href="style.css" />
+    <script>
+      function showThankYouMessage(event) {
+        event.preventDefault();
+        document.getElementById("checkout-form").style.display = "none";
+        document.getElementById("thank-you-message").style.display = "block";
+      }
+    </script>
   </head>
 
   <body>
@@ -30,7 +37,7 @@
           <p><strong>Price:</strong> $50.00</p>
         </div>
 
-        <form action="submit-order.html" method="POST">
+        <form>
           <h3>User Information</h3>
           <label for="name">First Name:</label>
           <input type="text" id="name" name="name" required />
@@ -41,9 +48,14 @@
           <label for="address">Address:</label>
           <textarea id="address" name="address" required></textarea>
 
-          <button type="submit" class="submit-button">Submit Order</button>
+          <button type="submit" class="submit-button" onclick="showThankYouMessage(event)">Submit Order</button>
         </form>
       </section>
+      
+      <div id="thank-you-message" style="display: none;">
+        <h2>Thank you for your order!</h2>
+        <p>Your order has been successfully placed. We will process it shortly.</p>
+      </div>
     </main>
 
     <footer>
@@ -56,4 +68,6 @@
       <p>&copy; 2024 NilaNaz Dresses. All rights reserved.</p>
     </footer>
   </body>
+  <script src="main.js"></script>
 </html>
+
